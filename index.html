@@ -1,0 +1,654 @@
+<html lang="ru">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <style>
+            body {
+                font-size: 9px;
+                font-family: "dejavu serif", serif;
+                /*width: 100%;*/
+                margin: 0 auto;
+                padding: 10px; /* Добавлено для отступов */
+            }
+
+            .border {
+                border-bottom: 1px solid rgb(0, 0, 0);
+                margin-right: 10px;
+                font-size: 10px;
+            }
+
+            .margin-right {
+                margin-right: 10px;
+            }
+
+            table {
+                padding-right: 20px !important;
+                border-collapse: collapse;
+                width: 100%; /* Используем всю ширину */
+            }
+
+            th, td {
+                border: 1px solid rgb(0, 0, 0);
+                padding: 5px; /* Добавлены отступы */
+                text-align: center;
+                font-size: 8px;
+            }
+
+            th {
+                font-size: 7px;
+            }
+
+            td {
+                font-size: 8px;
+            }
+
+            .line {
+                margin-top: 10px;
+                text-align: center;
+                border-bottom: 1px solid rgb(0, 0, 0);
+            }
+
+            .type_blanc {
+                margin-top: 10px;
+                text-align: right;
+            }
+
+            .span_type_blanc {
+                /*width: 30%;*/
+                display: block;
+                text-align: right;
+            }
+
+            .organization {
+                margin-top: 10px;
+            }
+
+            .colOrganizationName{
+                margin: 0 auto;
+            }
+
+            .organization{
+                margin-top: 10px;
+                width: 100%;
+            }
+            .rowOrganizationName{
+                display: block;
+                margin-left: auto;
+                height: 16px;
+            }
+
+            .organization_type {
+                width: 30%;
+                display: block;
+                float: left;
+                font-size: 12px;
+                text-align: end;
+            }
+
+            .organization_name {
+                width: 60%;
+                display: block;
+                float: left;
+                border-bottom: 1px solid rgb(0, 0, 0);
+                text-align: center;
+                font-size: 11px;
+            }
+
+            .organization_form {
+                display: inline-block;
+            }
+
+            .containerOrganization{
+                display: block;
+                width: 100%;
+            }
+            .rowOrganization{
+                display: block;
+                margin-left: auto;
+                height: 50px;
+            }
+
+            .colOrganization{
+                width: 33.3%;
+                margin-left: auto;
+                text-align: end;
+                height: 50px;
+            }
+            .spanCode{
+                width: 50%;
+                float: left;
+                height: 100%;
+            }
+            .spanTitle{
+                width: 49%;
+                margin-right: 1%;
+                float: left;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+            .spanCode{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+            }
+
+            .organization_form{
+                width: 40%;
+            }
+
+
+            .span_organization_form {
+                text-align: right;
+                display: block;
+                float: left;
+                width: 100%;
+            }
+            .span_organization_code {
+                text-align: center;
+                border: 1px solid rgb(0, 0, 0);
+
+            }
+            .containerCheck{
+                display: block;
+                width: 100%;
+            }
+            .rowCheck{
+                width: 100%;
+                height: 28px;
+            }
+            .colCheck{
+                display: block;
+                width: 16%;
+                float: left;
+                font-size: 12px;
+            }
+            .colInfoCheck{
+                display: block;
+                width: 82%;
+                float: left;
+                border-bottom: 1px solid rgb(0, 0, 0);
+                text-align: center;
+                font-size: 12px;
+            }
+            .company_name {
+                border-bottom: 1px solid rgb(0, 0, 0);
+                text-align: center;
+            }
+            p {
+                font-size: 12px;
+                margin-bottom: 0;
+            }
+            .spanTitleCompanyName{
+                text-align: center;
+            }
+            .passport {
+                width: 100%;
+                height: 20px;
+                margin-top: 15px;
+            }
+            .span_passport {
+                padding-left: 10px;
+
+            }
+
+            .h3_tmc {
+                text-align: center;
+            }
+
+            .table_tmc {
+                width: 100%;
+                border-collapse: collapse;
+            }
+
+            .tbody_tr {
+                height: 5mm;
+            }
+
+            .signature {
+                margin-top: 25px;
+                text-align: center;
+            }
+
+            .signature_div {
+                text-align: center;
+            }
+
+            .span_signature {
+                display: inline-block;
+                width: 150px;
+
+            }
+
+            .printing {
+                display: block;
+                float: left;
+                margin-left: 50px;
+            }
+
+            .accountant {
+                margin-top: 30px;
+            }
+
+.containerNameCompany{
+    margin-top: 20px;
+}
+
+
+
+            body {
+                font-size: 9px;
+                font-family: "dejavu serif", serif;
+                margin: 0;
+                padding: 10px;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                table-layout: fixed; /* Чтобы предотвратить сжатие столбцов */
+            }
+
+            th, td {
+                border: 1px solid rgb(0, 0, 0);
+                padding: 5px;
+                text-align: center;
+                font-size: 8px;
+                word-wrap: break-word; /* Перенос длинных слов */
+            }
+
+            th {
+                font-size: 7px;
+            }
+
+            .line {
+                margin: 10px 0;
+                text-align: center;
+                border-bottom: 1px solid rgb(0, 0, 0);
+            }
+
+            .organization, .company_name, .signature {
+                margin: 10px 0 0 0;
+                width: 100%;
+            }
+
+            @media print {
+                @page {
+                    margin: 15px; /* Убираем отступы */
+                    size: auto; /* Авторазмер страницы */
+                }
+
+                body {
+                    padding: 0;
+                }
+
+                .no-print {
+                    display: none !important;
+                }
+            }
+
+
+        </style>
+    </head>
+    <body onclick="print()">
+    <div class="conteiner">
+        <div class="row">
+            <div class="col">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Номер доверен.</th>
+                        <th>Дата выдачи</th>
+                        <th>Срок действия</th>
+                        <th>Должность и фамилия лица, которому выдана доверенность</th>
+                        <th>Расписка в получении доверенности</th>
+                        <th>Поставщик</th>
+                        <th>Номер и дата наряда(заменяющего наряда док.) или извещения</th>
+                        <th>Номер, дата документа, подтверждающего выполнение поручения</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td style="height: 12px"> </td>
+                        <td style="height: 12px"> </td>
+                        <td style="height: 12px"> </td>
+                        <td style="height: 12px"> </td>
+                        <td style="height: 12px"> </td>
+                        <td style="height: 12px"> </td>
+                        <td style="height: 12px"> </td>
+                        <td style="height: 12px"> </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="line">
+                    <span>Линия отреза</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerLine">
+        <div class="rowLine">
+            <div class="colLine">
+                <div class="type_blanc">
+                    <span class="span_type_blanc" style="font-size: 9px">Типовая межотраслевая форма № М-2</span>
+                    <span class="span_type_blanc" style="font-size: 9px">Утверждена постановлением</span>
+                    <span class="span_type_blanc" style="font-size: 9px">Госкомстата России от 30.10.97 г. № 71а</span>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="containerOrganization">
+        <div class="rowOrganization">
+            <div class="colOrganization">
+                <div class="organization_form">
+                    <div class="spanTitle">
+                        <span class="span_organization_form" style="font-size: 9px">Форма по ОКУД</span>
+                        <span class="span_organization_form" style="font-size: 9px">по ОКПО</span>
+                    </div>
+                    <div class="spanCode">
+                        <span class="span_organization_code" style="font-size: 9px">Коды</span>
+                        <span class="span_organization_code" style="font-size: 9px">0315001</span>
+                        <span class="span_organization_code" style="font-size: 9px">71354842</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerOrganization">
+        <div class="rowOrganizationName">
+            <div class="colOrganizationName">
+                <div class="organization">
+                    <div class="organization_type">
+                        <span style="font-size: 9px">Организация</span>
+                    </div>
+                    <div class="organization_name">
+                        <span style="font-size: 9px;  height: 12px; display: block;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerOrganization">
+        <div class="rowOrganizationName">
+            <div class="colOrganizationName">
+                <div class="organization">
+                    <div class="organization_type">
+                        <span style="font-size: 9px">Доверенность №</span>
+                    </div>
+                    <div class="organization_name">
+                        <span style="font-size: 9px;  height: 12px; display: block;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerOrganization">
+        <div class="rowOrganizationName">
+            <div class="colOrganizationName">
+                <div class="organization">
+                    <div class="organization_type">
+                        <span style="font-size: 9px">Дата выдачи</span>
+                    </div>
+                    <div class="organization_name">
+                        <span style="font-size: 9px; height: 12px; display: block;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerOrganization">
+        <div class="rowOrganizationName">
+            <div class="colOrganizationName">
+                <div class="organization">
+                    <div class="organization_type">
+                        <span style="font-size: 9px">Доверенность действительна по</span>
+                    </div>
+                    <div class="organization_name">
+                        <span style="font-size: 9px;  height: 12px; display: block;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerNameCompany">
+        <div class="rowNameCompany">
+            <div class="colNameCompany">
+                <div class="company_name">
+                    <p style="font-size: 9px; height: 12px; display: block;">
+
+                    </p>
+                </div>
+                <div class="spanTitleCompanyName">
+                    <span style="font-size: 6px">
+                        наименование потребителя и его адрес
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerNameCompany">
+        <div class="rowNameCompany">
+            <div class="colNameCompany">
+                <div class="company_name">
+                    <p style="font-size: 9px;  height: 12px; display: block;">
+
+                    </p>
+                </div>
+                <div class="spanTitleCompanyName">
+                    <span style="font-size: 6px">
+                        наименование плательщика и его адрес
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerCheck" style="margin-top: 10px; height: 28px">
+        <div class="rowCheck">
+            <div class="colCheck">
+                <span style="font-size: 9px">
+                    Счет №
+                </span>
+            </div>
+            <div class="colInfoCheck">
+                <span style="font-size: 9px; height: 12px; display: block;">
+
+                </span>
+            </div>
+            <div class="spanTitleCompanyName">
+                <span style="font-size: 6px">
+                    наименование потребителя и его адрес
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="containerCheck" style="margin-top: 10px">
+        <div class="rowCheck">
+            <div class="colCheck">
+                <span style="font-size: 9px">
+                    Доверенность выдана
+                </span>
+            </div>
+            <div class="colInfoCheck">
+                <span style="font-size: 9px; height: 12px; display: block;">
+
+                </span>
+            </div>
+            <div class="spanTitleCompanyName">
+                <span style="font-size: 6px">
+                    должность&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;фамилия, имя, отчество
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="containerCheck" >
+        <div class="rowCheck">
+            <div class="colCheck">
+                <span style="font-size: 9px">
+                    Паспорт:
+                </span>
+            </div>
+            <div class="colInfoCheck">
+                <span style="font-size: 9px; height: 12px; display: block;">
+
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="containerCheck">
+        <div class="rowCheck">
+            <div class="colCheck">
+                <span style="font-size: 9px">
+                    Кем выдан:
+                </span>
+            </div>
+            <div class="colInfoCheck">
+                <span style="font-size: 9px; height: 12px; display: block;">
+
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="containerCheck">
+        <div class="rowCheck">
+            <div class="colCheck">
+                <span style="font-size: 9px">
+                    На получение от
+                </span>
+            </div>
+            <div class="colInfoCheck">
+                <span style="font-size: 9px; height: 12px; display: block;">
+
+                </span>
+            </div>
+            <div class="spanTitleCompanyName">
+                <span style="font-size: 6px">
+                    наименование поставщика
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="containerCheck">
+        <div class="rowCheck">
+            <div class="colCheck">
+                <span style="font-size: 9px">
+                    материальных ценностей по
+                </span>
+            </div>
+            <div class="colInfoCheck">
+                <span style="font-size: 9px; height: 15px; display: block;">
+
+                </span>
+            </div>
+            <div class="spanTitleCompanyName">
+                <span style="font-size: 6px">
+                    наименование, номер и дата документа
+                </span>
+            </div>
+        </div>
+    </div>
+
+        <div class="mat_tmc">
+            <div class="h3_div_tmc">
+                <h3 class="h3_tmc">Перечень товарно-материальных ценностей, подлежащих получению</h3>
+            </div>
+            <table class="table_tmc">
+                <thead>
+                    <tr>
+                        <th>Номер по порядку</th>
+                        <th>Материальные ценности</th>
+                        <th>Единица измерения</th>
+                        <th>Количество (прописью)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>                        
+                    </tr>
+                    <tr>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>                        
+                    </tr>
+                    <tr>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>                        
+                    </tr>
+                    <tr>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>                        
+                    </tr>
+                    <tr>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>
+                        <td class="tbody_tr"></td>                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="signature">
+            <div class="passport">
+                <div class="span_passport signature_div">
+                    <span class="span_passport">Подпись лица, получившего доверенность</span>
+                    <span class="span_passport margin-right border span_signature"></span>
+                    <span class="span_passport">удостоверяем</span>
+                </div>
+            </div>
+        </div>
+        <div class="signature">
+            <div class="printing">
+                <span> М.П.</span>
+            </div>
+            <div class="director">
+                <div class="signature_div">
+                    <span class="">Руководитель</span>
+                    <span class=" margin-right border span_signature"></span>
+                    <span class=" margin-right border span_signature"></span>
+                </div>
+            </div>
+            <div class="accountant">
+                <div class=" signature_div">
+                    <span class="">Главный бухгалтер</span>
+                    <span class=" margin-right border span_signature"></span>
+                    <span class=" margin-right border span_signature"></span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+'
